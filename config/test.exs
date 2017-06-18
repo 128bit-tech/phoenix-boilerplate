@@ -12,8 +12,8 @@ config :logger, level: :warn
 # Configure your database
 config :boilerplate, Boilerplate.Repo,
   adapter: Ecto.Adapters.Postgres,
-  username: "postgres",
-  password: "postgres",
+  username: System.get_env("APP_USERNAME"),
+  password: System.get_env("APP_PASSWORD"),
   database: "boilerplate_test",
   hostname: "localhost",
   pool: Ecto.Adapters.SQL.Sandbox

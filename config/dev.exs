@@ -36,8 +36,8 @@ config :phoenix, :stacktrace_depth, 20
 # Configure your database
 config :boilerplate, Boilerplate.Repo,
   adapter: Ecto.Adapters.Postgres,
-  username: "postgres",
-  password: "postgres",
+  username: System.get_env("APP_USERNAME"),
+  password: System.get_env("APP_PASSWORD"),
   database: "boilerplate_dev",
   hostname: "localhost",
   pool_size: 10
